@@ -7,11 +7,11 @@ require "rails-csv-fixtures/version"
 Gem::Specification.new do |s|
   s.name        = "rails-csv-fixtures"
   s.version     = RailsCsvFixtures::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RailsCsvFixtures."
-  s.description = "TODO: Description of RailsCsvFixtures."
+  s.authors     = ["Brad Folkens"]
+  s.email       = ["bfolkens@gmail.com"]
+  s.homepage    = "http://github.com/bfolkens/rails-csv-fixtures"
+  s.summary     = "Restores functionality of CSV based fixtures in Rails 3.2+"
+  s.description = "This plugin restores the functionality of CSV based fixtures that was removed from Rails 3.2+"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
