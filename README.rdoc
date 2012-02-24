@@ -1,3 +1,5 @@
 = RailsCsvFixtures
 
 This plugin restores the functionality of CSV based fixtures that was removed from Rails 3.2+
+
+{<img src="https://secure.travis-ci.org/bfolkens/rails-csv-fixtures.png" />}[http://travis-ci.org/bfolkens/rails-csv-fixtures]
