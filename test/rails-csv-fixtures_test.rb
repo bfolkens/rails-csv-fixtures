@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RailsCsvFixturesTest < ActiveSupport::TestCase
   test 'should read csv fixtures' do
-    _fixtures = ActiveRecord::Fixtures.new(Account.connection, 'accounts', 'Account', File.join(fixture_path, 'accounts'))
+    _fixtures = ActiveRecord::FixtureSet.new(Account.connection, 'accounts', 'Account', File.join(fixture_path, 'accounts'))
     
     assert_not_nil _fixtures
     assert _fixtures.fixtures.any?
