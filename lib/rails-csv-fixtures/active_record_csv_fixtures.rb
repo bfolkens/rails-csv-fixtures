@@ -39,4 +39,4 @@ module RailsCsvFixtures
 end
 
 require 'active_record/fixtures'
-::ActiveRecord::Fixtures.send :include, RailsCsvFixtures::CsvFixtures
+::ActiveRecord::FixtureSet.send :include, RailsCsvFixtures::CsvFixtures
