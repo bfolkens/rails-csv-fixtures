@@ -29,9 +29,9 @@ module RailsCsvFixtures
     end
 
     def csv_file_path
-      @fixture_path + ".csv"
-    end  
-    
+      @path + '.csv'
+    end
+
     def erb_render(fixture_content)
       ERB.new(fixture_content).result
     end
