@@ -32,7 +32,7 @@ module RailsCsvFixtures
     end
 
     def csv_file_path(*args)
-      (args.first || @path) + '.csv'
+      (args.first || @path || @fixture_path) + '.csv'
     end
 
     def erb_render(fixture_content)
@@ -42,4 +42,8 @@ module RailsCsvFixtures
 end
 
 require 'active_record/fixtures'
-::ActiveRecord::FixtureSet.send :include, RailsCsvFixtures::CsvFixtures
+if ::ActiveRecord::VERSION::MAJOR < 4
+  ::ActiveRecord::Fixtures.send :include, RailsCsvFixtures::CsvFixtures
+else
+  ::ActiveRecord::FixtureSet.send :include, RailsCsvFixtures::CsvFixtures
+end
