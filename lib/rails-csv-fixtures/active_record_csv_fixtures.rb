@@ -6,7 +6,8 @@ module RailsCsvFixtures
     extend ActiveSupport::Concern
 
     included do
-      alias_method_chain :read_fixture_files, :csv_support
+      alias_method :read_fixture_files_without_csv_support, :read_fixture_files
+      alias_method :read_fixture_files, :read_fixture_files_with_csv_support
     end
 
     def read_fixture_files_with_csv_support(*args)
