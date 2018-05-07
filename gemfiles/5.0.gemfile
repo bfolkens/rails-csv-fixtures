@@ -2,7 +2,6 @@
 
 source "https://rubygems.org"
 
-gem "rails", "~> 4.0.0"
-gem "mime-types", "< 3" if RUBY_VERSION[/^1\.9\./]
+gem "rails", "~> 5.0.0"
 
 gemspec :path=>"../"

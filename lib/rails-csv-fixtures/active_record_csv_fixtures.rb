@@ -6,7 +6,8 @@ module RailsCsvFixtures
     extend ActiveSupport::Concern
 
     included do
-      alias_method_chain :read_fixture_files, :csv_support
+      alias_method :read_fixture_files_without_csv_support, :read_fixture_files
+      alias_method :read_fixture_files, :read_fixture_files_with_csv_support
     end
 
     def read_fixture_files_with_csv_support(*args)
@@ -25,7 +26,7 @@ module RailsCsvFixtures
       reader.each do |row|
         data = {}
         row.each_with_index { |cell, j| data[header[j].to_s.strip] = cell.nil? ? nil : cell.to_s.strip }
-        class_name = (args.second || @class_name)
+        class_name = (args.second || model_class && model_class.name)
         fixtures["#{class_name.to_s.underscore}_#{i+=1}"] = ActiveRecord::Fixture.new(data, model_class)
       end
       fixtures

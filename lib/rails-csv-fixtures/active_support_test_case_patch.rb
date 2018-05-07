@@ -4,7 +4,8 @@ module RailsCsvFixtures
     
     included do
       class << self
-        alias_method_chain :fixtures, :csv_support
+        alias_method :fixtures_without_csv_support, :fixtures
+        alias_method :fixtures, :fixtures_with_csv_support
       end
     end
     
